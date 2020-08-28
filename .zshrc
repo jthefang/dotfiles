@@ -9,19 +9,19 @@ export ZSH="/Users/jfang/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL10K_PROMPT_ON_NEWLINE=true
 # Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+POWERLEVEL10K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 # Visual customisation of the second prompt line
 local user_symbol="$"
 if [[ $(print -P "%#") =~ "#" ]]; then
     user_symbol = "#"
 fi
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
+POWERLEVEL10K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+POWERLEVEL10K_VCS_MODIFIED_BACKGROUND='red'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,10 +78,10 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 plugins=(
     git
     zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -111,16 +111,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export JDK_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home'
-export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.8.0_102.jdk/Contents/Home'
-
-# Setting PATH for Python 3.5
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-export PATH
-
-# added by Anaconda3 4.1.1 installer
-export PATH="/Applications/anaconda/bin:$PATH"
 
 # -----------  MY ADDITIONS:
 
@@ -134,10 +124,8 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 #shortcut to directories
-alias junior="cd /Users/jfang/School/Junior/spring"
 alias chrome="open -a Google\ Chrome"
 alias python=python3
-alias ssh-james="ssh 23.229.136.226"
 alias cwd='printf "%q\n" "$(pwd)"; printf "%q\n" "$(pwd)" | pbcopy' #prints and copies fully escaped path to clipboard
 source .my_cmds.sh
 
@@ -150,19 +138,5 @@ export BLOCKSIZE=1024
 # MacPorts Installer addition on 2017-09-14_at_11:41:53: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
-
-# PostgreSQL Credentials
-export PGHOST="localhost"
-export PGUSER="jfang"
-export PGPASSWORD="geminination"
-export NODE_ENV="development"
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-PATH="$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
-export PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
