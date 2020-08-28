@@ -14,6 +14,8 @@ echo "Changing to the $dir directory"
 cd $dir
 echo "...complete."
 
+cp $dir/.my_cmds.sh ~/
+
 for file in $files; do
     echo "Moving existing dotfiles from ~ to $olddir"
     mv ~/$file $olddir
