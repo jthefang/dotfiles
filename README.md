@@ -3,7 +3,8 @@ My dotfiles
 
 ## Mac setup
 
-- https://gist.github.com/kevin-smets/8568070
+- Brew + ZSH: https://gist.github.com/kevin-smets/8568070
+- Vim vundle: https://github.com/VundleVim/Vundle.vim#quick-start
 - Clone this repo
-  - run .make.sh
+  - Then run .make.sh
 
